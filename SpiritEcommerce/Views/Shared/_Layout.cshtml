@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SpiritEcommerce</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="nav-bar" >
+            <div class="language-currency-select">
+                <select name="language" id="language">
+                    <option value="EN">EN</option>
+                    <option value="FR">FR</option>
+                </select>
+                <select name="currency" id="currency">
+                    <option value="USD">USD</option>
+                    <option value="NGN">NGN</option>
+                </select>
+            </div>
+            <div id="nav-bar-items">
+                <div class="profile-container">
+                    <img src="~/img/profile_close_2.png" alt="">
+                    <a href="">My Profile</a>
+                </div>
+                <div class="cart-container" style="width: 50px">
+                    <img src="~/img/Cart.png" alt="">
+                    <svg class="cart-count" width="50" height="50" style="display: block; margin: -110% 0 0 -5%; ">
+                        <circle cx="25" cy="25" r="10" stroke="white" stroke-width="2" fill="red" />
+                        <text x="20"  y="30" fill="white">6</text>
+                    </svg>
+                </div>
+                <a id="items" href="">Items</a>
+                <a id="amount">$0.00</a>
+                <input type="text" name="search" id="nav-bar-search" value="" placeholder="">
+            </div>
+
+        </nav>
+        <nav class="nav-bar2">
+            <a href=""><img src="~/img/FOOTER.png" alt=""></a>
+            <div id="nav-link-wrapper">
+                <a class="nav-link" href="">HOME</a>
+                <a class="nav-link" href="">BAGS</a>
+                <a class="nav-link" href="">SNEAKERS</a>
+                <a class="nav-link" href="">BELT</a>
+                <a class="nav-link" href="">CONTACT</a>
+            </div>
+            
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - SpiritEcommerce - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
