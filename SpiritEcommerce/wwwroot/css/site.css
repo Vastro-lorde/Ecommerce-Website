@@ -7,6 +7,7 @@ for details on configuring this project to bundle and minify static web assets. 
     --red: #FF4858;
     --light-blue: #BCDDFE;
     --black: #373737;
+    --black-faint: rgb(170, 170, 170);
 }
 
 * {
@@ -29,7 +30,7 @@ a {
     box-sizing: border-box;
     display: flex;
     align-items: flex-end;
-    margin: -9rem auto 0 auto;
+    margin: -4rem auto 0 auto;
     width: 80%;
 }
 
@@ -106,13 +107,25 @@ body {
     font-family: 'Poppins';
 }
 
+button {
+    display: inline-block;
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    height: 2.5rem;
+    width: 6rem;
+}
+
 .cart-container {
     display: inline-block;
     margin-left: 5%;
 }
 
 .cost {
-    color: rgb(170, 170, 170);
+    color: var(--black-faint);
     display: inline-block;
     text-decoration: line-through;
 }
@@ -129,11 +142,55 @@ body {
     font-weight: bolder;
 }
 
+#featured {
+    display: flex;
+    justify-content: space-between;
+    margin: 10% auto 10% auto;
+    width: 80%;
+}
+
+.featured-product{
+    box-sizing:border-box;
+    display: flex;
+    gap: 1rem;
+    align-content: start;
+}
+
+.featured-product-pic{
+    width: 7rem;
+}
+
+.featured-product-pic>img{
+    width: 100%;
+}
+
+.featured-product-text{
+    text-align: left;
+}
+
+.featured-product-text>.cost-container{
+    justify-content:flex-start;
+}
+
+.featured-product-text>.rates {
+    margin-top: 0.7rem;
+    margin-bottom: 0.5rem;
+}
+
 .final-cost {
     color: var(--blue);
     font-family: 'Raleway';
     font-weight: bolder;
     margin: -3rem 0 0 15rem;
+}
+
+form {
+    background-color: var(--blue);
+    display: flex;
+    align-items:center;
+    margin: 0 auto 5rem auto;
+    height:auto;
+    width: 32rem;
 }
 
 h1 {
@@ -202,18 +259,56 @@ header {
     justify-content: flex-end;
 }
 
+.news-card {
+    display: flex;
+    gap: 1rem;
+}
+
+.news-card-img>img{
+    width: 100%;
+}
+
+.news-card-img {
+    box-sizing: border-box;
+    width: 40%;
+}
+
+#news-cards {
+    display: flex;
+    margin: 5% auto 10% auto;
+    width: 80%;
+}
+
+.news-card-text{
+    width: 40%;
+}
+
+.news-date {
+    color: var(--black-faint);
+    font-size: 1rem;
+}
+
+.news-description {
+    font-size: 0.7rem;
+}
+
+.news-title{
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+
 #offer-banner {
     background-image: url("../img/PromotionImage.png");
     color: white;
-    height: 110vh;
+    height: 105vh;
 }
 
 .overlay {
     box-sizing:border-box;
     margin: -15rem 0 0 0rem;
     position: absolute;
-    height: 40%;
-    width: 20%;
+    height: 14rem;
+    width: 15rem;
     opacity: 0;
     transition: .5s ease;
     background-color: white;
@@ -279,9 +374,22 @@ select {
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    margin: 10% auto 20% auto;
+    margin: 10% auto 10% auto;
     padding: 0 10% 0 10%;
 }
+
+
+
+#search {
+    display: inline-block;
+    border: 2px solid var(--blue);
+    margin: auto;
+    text-align: left;
+    height: 2rem;
+    padding: 0.2rem 0rem 0 1rem;
+    width: 25rem;
+}
+
 
 .service{
     text-align: center;
@@ -349,6 +457,15 @@ select {
 
 @media only screen and (max-width: 992px) {
     #nav-link-wrapper {
+        flex-wrap: wrap;
+    }
+
+    #best-seller-cards {
+        display: block;
+    }
+
+    #banners {
+        background-color: none;
         flex-wrap: wrap;
     }
 }
