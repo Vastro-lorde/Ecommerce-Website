@@ -193,6 +193,41 @@ form {
     width: 32rem;
 }
 
+footer{
+    background-color: var(--light-blue);
+    text-align: left;
+}
+
+#footer1, #footer2 {
+    display: flex;
+    align-items: start;
+    justify-content:space-between;
+    padding: 10rem 10% 0 10%;
+}
+
+.footer-item{
+    width: 30%;
+}
+
+.footer-item2 {
+    width: 20%;
+}
+
+.footer-item-img{
+    display: flex;
+    gap: 1rem;
+}
+
+#footer-logos {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-topic{
+    font-weight: bolder;
+    margin-bottom: 2rem;
+}
+
 h1 {
     font-size: 4em;
     font-weight: bolder;
@@ -207,6 +242,15 @@ header {
     margin: auto;
     width: 80%;
     padding: 1rem 5rem 0 0rem;
+}
+hr{
+    color: white;
+    border: 1px solid white;
+    margin-top: 5rem;
+}
+
+.nav-bar2>img{
+    display: none;
 }
 
 
@@ -456,16 +500,34 @@ select {
 }
 
 @media only screen and (max-width: 992px) {
-    #nav-link-wrapper {
-        flex-wrap: wrap;
-    }
-
-    #best-seller-cards {
-        display: block;
-    }
-
     #banners {
         background-color: none;
         flex-wrap: wrap;
+    }
+    #best-seller-cards{
+        display: block;
+    }
+    .nav-bar2 > img {
+        display: block;
+    }
+    .nav-bar2 > img:hover{
+        background-color: var(--light-blue);
+        border-radius: 1px var(--blue);
+    }
+    #nav-link-wrapper{
+        display: none;
+    }
+    #news-cards{
+        gap: 2rem;
+    }
+
+    #services,#news-cards,#featured {
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items:center;
+    }
+    .service{
+        margin-bottom: 2rem;
     }
 }
