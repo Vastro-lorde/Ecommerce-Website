@@ -56,11 +56,10 @@
                     <div class="best-seller-text">
                         <p>FS-QUILTED MAXI CROSS BAG</p>
                         <div class="rates">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
+                            @for (var i = 0; i < 5; i++)
+                           {
+                               <img src="~/img/star.png" alt="">
+                           }
                         </div>
                         <div class="cost-container">
                             <span class="discount-cost">$299.43</span>
@@ -78,11 +77,7 @@
                     <div class="best-seller-text">
                         <p>FS-QUILTED MAXI CROSS BAG</p>
                         <div class="rates">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
+                            @for (var i = 0; i < 5; i++){<img src="~/img/star.png" alt="">}
                         </div>
                         <div class="cost-container">
                             <span class="discount-cost">$299.43</span>
@@ -100,11 +95,7 @@
                     <div class="best-seller-text">
                         <p>FS-QUILTED MAXI CROSS BAG</p>
                         <div class="rates">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
+                            @for (var i = 0; i < 5; i++){<img src="~/img/star.png" alt="">}
                         </div>
                         <div class="cost-container">
                             <span class="discount-cost">$299.43</span>
@@ -122,11 +113,7 @@
                     <div class="best-seller-text">
                         <p>FS-QUILTED MAXI CROSS BAG</p>
                         <div class="rates">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
+                            @for (var i = 0; i < 5; i++){<img src="~/img/star.png" alt="">}
                         </div>
                         <div class="cost-container">
                             <span class="discount-cost">$299.43</span>
@@ -144,11 +131,7 @@
                     <div class="best-seller-text">
                         <p>FS-QUILTED MAXI CROSS BAG</p>
                         <div class="rates">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
+                            @for (var i = 0; i < 5; i++){<img src="~/img/star.png" alt="">}
                         </div>
                         <div class="cost-container">
                             <span class="discount-cost">$299.43</span>
@@ -166,11 +149,7 @@
                     <div class="best-seller-text">
                         <p>FS-QUILTED MAXI CROSS BAG</p>
                         <div class="rates">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
+                            @for (var i = 0; i < 5; i++){<img src="~/img/star.png" alt="">}
                         </div>
                         <div class="cost-container">
                             <span class="discount-cost">$299.43</span>
@@ -188,11 +167,7 @@
                     <div class="best-seller-text">
                         <p>FS-QUILTED MAXI CROSS BAG</p>
                         <div class="rates">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
+                            @for (var i = 0; i < 5; i++){<img src="~/img/star.png" alt="">}
                         </div>
                         <div class="cost-container">
                             <span class="discount-cost">$299.43</span>
@@ -210,11 +185,7 @@
                     <div class="best-seller-text">
                         <p>FS-QUILTED MAXI CROSS BAG</p>
                         <div class="rates">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
+                            @for (var i = 0; i < 5; i++){<img src="~/img/star.png" alt="">}
                         </div>
                         <div class="cost-container">
                             <span class="discount-cost">$299.43</span>
@@ -224,7 +195,7 @@
                     </div>
                 </div>
             </div>
-            <a href="">LOAD MORE</a>
+            <a href="/Home/Products">LOAD MORE</a>
         </div>
         <!-- Shop Now Banner-->
         <div id="shop-now">
@@ -295,7 +266,9 @@
        <div>
             <h2>FEATURED PRODUCTS</h2>
             <div id="featured">
-                <div class="featured-product">
+                @for (var j = 0; j < 3; j++)
+               {
+                   <div class="featured-product">
                     <div class="featured-product-pic">
                         <img src="~/img/Vector.png" />
                     </div>
@@ -303,11 +276,7 @@
                         <p>Blue Swade Nike</p>
                         <p>Sneakers</p>
                         <div class="rates">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
+                            @for (var i = 0; i < 5; i++){<img src="~/img/star.png" alt="">}
                         </div>
                         <div class="cost-container">
                             <span class="discount-cost">$299.43</span>
@@ -315,46 +284,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="featured-product">
-                    <div class="featured-product-pic">
-                        <img src="~/img/Vector.png" />
-                    </div>
-                    <div class="featured-product-text">
-                        <p>Blue Swade Nike</p>
-                        <p>Sneakers</p>
-                        <div class="rates">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                        </div>
-                        <div class="cost-container">
-                            <span class="discount-cost">$299.43</span>
-                            <span class="cost">$000.00 </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="featured-product">
-                    <div class="featured-product-pic">
-                        <img src="~/img/Vector.png" />
-                    </div>
-                    <div class="featured-product-text">
-                        <p>Blue Swade Nike</p>
-                        <p>Sneakers</p>
-                        <div class="rates">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                            <img src="~/img/star.png" alt="">
-                        </div>
-                        <div class="cost-container">
-                            <span class="discount-cost">$299.43</span>
-                            <span class="cost">$000.00 </span>
-                        </div>
-                    </div>
-                </div>
+               }
             </div>
        </div>
        <!-- Search-->
