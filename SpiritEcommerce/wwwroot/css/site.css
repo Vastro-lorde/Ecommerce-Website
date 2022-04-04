@@ -249,6 +249,11 @@ hr{
     margin-top: 5rem;
 }
 
+#login{
+    height: 70%;
+    width: 80%;
+}
+
 .nav-bar2>img{
     display: none;
 }
@@ -504,8 +509,9 @@ select {
         background-color: none;
         flex-wrap: wrap;
     }
-    #best-seller-cards{
-        display: block;
+    #best-seller-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     }
     .nav-bar2 > img {
         display: block;
@@ -530,5 +536,6 @@ select {
     }
     .service{
         margin-bottom: 2rem;
+
     }
 }

@@ -1,17 +1,20 @@
-﻿using SpiritEcommerce.Enum;
+﻿using SpiritEcommerce.Enums;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace SpiritEcommerce.Models
 {
     public class Product
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public Category Category { get; set; }
         public string Name { get; set; }
         public string Brand { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
         public decimal UnitPrice { get; set; }
+
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:P2}")]
         public decimal PercentOff { get; set; }
         public decimal DiscountUnitPrice
         {
@@ -25,7 +28,7 @@ namespace SpiritEcommerce.Models
                 var review = Reviews;
                 for (int i = 0; i < review.Count; i++)
                 {
-                    TotalRating += review[i].Rate;
+                    TotalRating += (int)review[i].Rate;
                 }
                 int rating = TotalRating / review.Count;
                 return rating;

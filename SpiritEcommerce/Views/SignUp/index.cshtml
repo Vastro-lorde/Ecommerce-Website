@@ -1,0 +1,19 @@
+﻿@model SpiritEcommerce.Models.User
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>User</h4>
+<hr />
+<div id="Login">
+        <form asp-action="Create">
+            <input type="hidden" name="Id">
+            <input type="email" name="Email" value="" placeholder="Enter Email here"/>
+            <input type="password" name="Password" value="" placeholder="Enter Password here"/>
+            <input type="submit" value="Login"/>
+        </form>
+</div>
+

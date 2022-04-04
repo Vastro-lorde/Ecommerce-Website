@@ -5,3 +5,45 @@
 }
 
 <h1>Products</h1>
+<!-- Shop Now Banner-->
+        <div id="shop-now">
+            <div id="shop-now-text">
+                <p id="shop-now-txtBig">Adidas Men Running <br>Sneakers</p>
+                <p id="shop-now-txtSmall">Perform and design. Taken right to the edge.</p>
+                <a id="shop-now-link" href="">SHOP NOW</a>
+            </div>
+            <div id="shop-now-pic">
+                <img src="~/img/shoes-shoe-png-transparent-shoe-images-pluspng-17 1.png" />
+            </div>
+        </div>
+ <!-- Product List section using same class as the best seller in home-->
+ <div id="best-seller">
+            <h2>Products</h2>
+            <div id="best-seller-cards">
+                @for (var x = 0; x < 8; x++)
+               {
+                   <div class="best-card">
+                    <img src="~/img/image Product-2.png" alt="">
+                    <div class="overlay">
+                        <img src="~/img/hearts.png" />
+                        <img src="~/img/cart_2.png" />
+                    </div>
+                    <div class="best-seller-text">
+                        <p>FS-QUILTED MAXI CROSS BAG</p>
+                        <div class="rates">
+                            @for (var i = 0; i < 5; i++)
+                           {
+                               <img src="~/img/star.png" alt="">
+                           }
+                        </div>
+                        <div class="cost-container">
+                            <span class="discount-cost">$299.43</span>
+                            <span class="cost">$000.00 </span>
+                            <span class="per-off">30% off</span>
+                        </div>
+                    </div>
+                </div>
+               }
+            </div>
+            <a href="/Home/Products">LOAD MORE</a>
+        </div>
