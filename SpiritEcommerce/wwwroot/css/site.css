@@ -11,6 +11,7 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 * {
+    /*box-sizing:border-box;*/
     margin: 0;
     padding: 0;
 }
@@ -26,7 +27,7 @@ a {
 }
 
 #banners {
-    background-color: white;
+    /*background-color: white;*/
     box-sizing: border-box;
     display: flex;
     align-items: flex-end;
@@ -72,7 +73,8 @@ a {
 
 #best-seller-cards {
     display: grid;
-    grid: repeat(2, 1fr)/ repeat(4,1fr);
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    /*grid: repeat(2, 1fr)/ repeat(4,1fr);*/
     gap: 1rem;
     margin: auto;
     padding: 1rem;
@@ -184,15 +186,6 @@ button {
     margin: -3rem 0 0 15rem;
 }
 
-form {
-    background-color: var(--blue);
-    display: flex;
-    align-items:center;
-    margin: 0 auto 5rem auto;
-    height:auto;
-    width: 32rem;
-}
-
 footer{
     background-color: var(--light-blue);
     text-align: left;
@@ -249,12 +242,94 @@ hr{
     margin-top: 5rem;
 }
 
-#login{
-    height: 70%;
-    width: 80%;
+.input-field {
+    border: solid 2px var(--blue);
+    border-radius: 5px;
+    display: block;
+    margin: 0.5rem 0;
+    padding: 1rem;
 }
 
-.nav-bar2>img{
+input[type="date"] {
+    background-image: url('../img/Date.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: var(--black);
+    font-weight: bolder;
+    text-indent: 3rem;
+}
+
+input[type="email"] {
+    background-image: url('../img/Message.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: var(--black);
+    font-weight: bolder;
+    text-indent: 3rem;
+}
+
+input[type="password"] {
+    background-image: url('../img/Password.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: var(--black);
+    font-weight: bolder;
+    text-indent: 3rem;
+}
+
+input[type="phone"] {
+    background-image: url('../img/Phone.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: var(--black);
+    font-weight: bolder;
+    text-indent: 3rem;
+}
+
+input[type="text"] {
+    background-image: url('../img/User.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: var(--black);
+    font-weight: bolder;
+    text-indent: 3rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70%;
+    margin: auto;
+    width: 60%;
+}
+
+
+
+.login-form-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+.login-form-container>p{
+    color: var(--black-faint);
+    padding: 0 0 2rem 0;
+}
+
+.login-form-title{
+    font-size: 2rem;
+    font-weight: bolder;
+    padding: 0;
+}
+
+.login-submit{
+    background-color: var(--blue);
+    color: white;
+    font-weight: bolder;
+}
+
+.nav-bar2 > img {
     display: none;
 }
 
@@ -413,6 +488,15 @@ hr{
         margin-left: 10%;
     }
 
+.search-form {
+    background-color: var(--blue);
+    display: flex;
+    align-items: center;
+    margin: 0 auto 5rem auto;
+    height: auto;
+    width: 32rem;
+}
+
 select {
     border: none;
     font-weight: bold;
@@ -502,6 +586,10 @@ select {
     .nav-bar, .nav-bar2 {
         flex-wrap: wrap;
     }
+    #items, #amount, .profile-container>a:nth-child(2) {
+        display: none;
+    }
+    
 }
 
 @media only screen and (max-width: 992px) {
@@ -513,8 +601,15 @@ select {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     }
+
+
+    .login-form-title{
+        font-size : 1rem;
+    }
+
     .nav-bar2 > img {
         display: block;
+        width:1rem;
     }
     .nav-bar2 > img:hover{
         background-color: var(--light-blue);

@@ -1,0 +1,39 @@
+﻿@model SpiritEcommerce.Models.User
+
+@{
+    ViewData["Title"] = "Welcome to E-com";
+}
+
+<hr />
+<div class="login-form-container">
+         <div><img src=~/img/Icon.png /></div>
+         <h1 class="login-form-title">@ViewData["Title"]</h1>
+         <p>Sign up to continue</p>
+        <form asp-action="View" class="login-form">
+                <input type="text" name="Id" class="form-control" style="display: none" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+                <input type="email" name="Email" class="input-field" placeholder="input your email"/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+                <input type="password" name="Password" class="input-field" placeholder="input your password"/>
+                <input type="password" class="input-field" placeholder="input your password again"/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+                
+                <input type="text" name="FullName" class="input-field" placeholder="fullname"/>
+                <span asp-validation-for="FullName" class="text-danger"></span>
+                
+                <select type="select"  class="input-field" >
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+                <input type="date" name="DateOfBirth" class="input-field" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+              
+                <input type="phone" name="PhoneNumber" class="input-field" placeholder="input your phone number"/>
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            <input type="submit" value="SIGNUP" class="input-field login-submit" />
+        </form>
+        <span>Already have an account? </span><a href="/Home/Login" style="font-weight: bolder; color: #40BFFF;">Sign In</a>
+</div>
+
