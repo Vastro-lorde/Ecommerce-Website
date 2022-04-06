@@ -21,8 +21,24 @@ namespace SpiritEcommerce.Controllers
             _dbContext = dbContext;
         }
 
-        /*[HttpPost]
-        [ValidateAntiForgeryToken]*/
+        public async Task<IActionResult> Index()
+        {
+            try
+            {
+                var Products = await _dbContext.ReadJson<Product>("Products");
+                ViewBag.Products = Products;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Index(User user)
         {
             user.Id = _utility.RandomDigits(8);
@@ -52,9 +68,14 @@ namespace SpiritEcommerce.Controllers
             return View();
         }
 
-        public IActionResult DashBoard()
+        public async Task<IActionResult> DashBoard(User user)
         {
-            return View();
+            var Users = await _dbContext.ReadJson<User>("Users.json");
+            foreach (var person in Users)
+            {
+                if (person.Email == user.Email && person.Password == user.Password) return View(person);
+            }
+            return View("User not found");
         }
 
 

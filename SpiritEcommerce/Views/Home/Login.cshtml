@@ -1,16 +1,16 @@
-﻿
+﻿@model SpiritEcommerce.Models.User
 @{
     ViewData["Title"] = "Welcome to E-com";
 }
 
-
+n
 <div class="login-form-container">
     <div><img src=~/img/Icon.png /></div>
     <h1 class="login-form-title">@ViewData["Title"]</h1>
     <p>Sign in to continue</p>
-    <form method= "post" action= "/Home/DashBoard" class="login-form">
-        <input type="email" name="Email" value="" placeholder="enter your email" class="input-field"/>
-        <input type="password" name="Password" value="" placeholder="enter your password" class="input-field"/>
+    <form method= "post" asp-action="Dashboard" asp-controller="Home" class="login-form">
+        <input type="email" asp-for="Email" name="Email" value="" placeholder="enter your email" class="input-field"/>
+        <input type="password" asp-for="Password" name="Password" value="" placeholder="enter your password" class="input-field"/>
         <input type="submit" value="LOGIN" class="input-field login-submit" />
     </form>
     <span>Don't have an account? </span><a href="/Home/SignUp" style="font-weight: bolder; color: #40BFFF;">Register</a>
