@@ -12,6 +12,8 @@ namespace SpiritEcommerce.Models
         [Required]
         public string Password { get; set; }
         public string FullName { get; set; }
+
+        [EnumDataType(typeof(Gender))]
         public Gender Gender { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string PhoneNumber { get; set; }

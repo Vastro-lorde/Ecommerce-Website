@@ -1,4 +1,5 @@
-﻿@model SpiritEcommerce.Models.User
+﻿@using SpiritEcommerce.Enums
+@model SpiritEcommerce.Models.User
 
 @{
     ViewData["Title"] = "Welcome to E-com";
@@ -9,28 +10,26 @@
          <div><img src=~/img/Icon.png /></div>
          <h1 class="login-form-title">@ViewData["Title"]</h1>
          <p>Sign up to continue</p>
-        <form asp-action="View" class="login-form">
-                <input type="text" name="Id" class="form-control" style="display: none" />
+        <form asp-action="" class="login-form">
+                <input type="text" name="Id" asp-for="Id" class="form-control" style="display: none" />
                 <span asp-validation-for="Id" class="text-danger"></span>
-                <input type="email" name="Email" class="input-field" placeholder="input your email"/>
+                <input type="email" asp-for="Email" name="Email" class="input-field" placeholder="input your email"/>
                 <span asp-validation-for="Email" class="text-danger"></span>
-                <input type="password" name="Password" class="input-field" placeholder="input your password"/>
+                <input type="password" asp-for="Password" name="Password" class="input-field" placeholder="input your password"/>
                 <input type="password" class="input-field" placeholder="input your password again"/>
                 <span asp-validation-for="Password" class="text-danger"></span>
                 
-                <input type="text" name="FullName" class="input-field" placeholder="fullname"/>
+                <input type="text" asp-for="FullName" name="FullName" class="input-field" placeholder="fullname"/>
                 <span asp-validation-for="FullName" class="text-danger"></span>
                 
-                <select type="select"  class="input-field" >
-                    <option>Male</option>
-                    <option>Female</option>
-                    <option>Other</option>
+                <select type="select"  class="input-field" asp-for="Gender" asp-items="Html.GetEnumSelectList<Gender>()">
+                  <option>choose</option>
                 </select>
                 <span asp-validation-for="Gender" class="text-danger"></span>
-                <input type="date" name="DateOfBirth" class="input-field" />
+                <input type="date" asp-for="DateOfBirth" name="DateOfBirth" class="input-field" />
                 <span asp-validation-for="DateOfBirth" class="text-danger"></span>
               
-                <input type="phone" name="PhoneNumber" class="input-field" placeholder="input your phone number"/>
+                <input type="phone" asp-for="PhoneNumber" name="PhoneNumber" class="input-field" placeholder="input your phone number"/>
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             <input type="submit" value="SIGNUP" class="input-field login-submit" />
         </form>
