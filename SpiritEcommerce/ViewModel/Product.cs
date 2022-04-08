@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace SpiritEcommerce.Models
+namespace SpiritEcommerce.ViewModel
 {
     public class Product
     {
@@ -13,7 +13,6 @@ namespace SpiritEcommerce.Models
         public string Color { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
-        public bool Featured { get; set; }
         public decimal UnitPrice { get; set; }
 
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:P2}")]

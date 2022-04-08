@@ -20,7 +20,7 @@
  <div id="best-seller">
             <h2>Products</h2>
             <div id="best-seller-cards">
-                @for (var x = 0; x < 8; x++)
+                @for (var j = 0; j < @ViewBag.Products.Count -1; j++)
                {
                    <div class="best-card">
                     <img src="~/img/image Product-2.png" alt="">
@@ -29,7 +29,7 @@
                         <img src="~/img/cart_2.png" />
                     </div>
                     <div class="best-seller-text">
-                        <p>FS-QUILTED MAXI CROSS BAG</p>
+                        <p>@ViewBag.Products[j].Name</p>
                         <div class="rates">
                             @for (var i = 0; i < 5; i++)
                            {
@@ -37,9 +37,9 @@
                            }
                         </div>
                         <div class="cost-container">
-                            <span class="discount-cost">$299.43</span>
-                            <span class="cost">$000.00 </span>
-                            <span class="per-off">30% off</span>
+                            <span class="discount-cost">$@ViewBag.Products[j].DiscountUnitPrice</span>
+                            <span class="cost">$@ViewBag.Products[j].UnitPrice </span>
+                            <span class="per-off">@ViewBag.Products[j].PercentOff% off</span>
                         </div>
                     </div>
                 </div>

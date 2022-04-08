@@ -25,7 +25,7 @@ namespace SpiritEcommerce.Controllers
         {
             try
             {
-                var Products = await _dbContext.ReadJson<Product>("Products");
+                var Products = await _dbContext.ReadJson<Product>("Products.json");
                 ViewBag.Products = Products;
             }
             catch (Exception)
@@ -45,6 +45,8 @@ namespace SpiritEcommerce.Controllers
             try
             {
                 var write = await _dbContext.WriteJson<User>(user, "Users.json");
+                var Products = await _dbContext.ReadJson<Product>("Products.json");
+                ViewBag.Products = Products;
             }
             catch (Exception)
             {
@@ -58,8 +60,19 @@ namespace SpiritEcommerce.Controllers
         {
             return View();
         }
-        public IActionResult Products()
+        public async Task<IActionResult> Products()
         {
+            try
+            {
+                var Products = await _dbContext.ReadJson<Product>("Products.json");
+                ViewBag.Products = Products;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
             return View();
         }
 

@@ -286,7 +286,7 @@ input[type="phone"] {
     text-indent: 3rem;
 }
 
-input[type="text"] {
+.login-form>input[type="text"] {
     background-image: url('../img/User.png');
     background-size: contain;
     background-repeat: no-repeat;
